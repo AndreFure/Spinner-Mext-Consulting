@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="spinner.css">
+  <title>Circular Text animation</title>
+
+</head>
+
+<body>
+  <div id="circ">
+    <span class="c1"> RELATIONSHIP TRUST</span>
+    <span class="c2">VISION TRUST</span>
+    <span class="c3">DEVELOPMENT TRUST</span>
+    <span class="c4">BENEFIT TRUST</span>
+    <span class="c5">COMPETENCE TRUST</span>
+    <span class="c6">STABILITY TRUST</span>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+
+  <script>
+    let circ = new CircleType(document.getElementById('circ'));
+    circ.raduis(360);
+  </script>
+</body>
+
+</html>
