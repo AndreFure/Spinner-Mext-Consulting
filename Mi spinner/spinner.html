@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- The next three "meta" leave them in the head so that the styles can be interpreted by all devices -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spinner</title>
+  <link href="Css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="wheelContainer row">
+    <div class="wheel1  column">
+      <img id="imgClickAndChange" src="Img/Human_Full.png" onclick="changeImage();">
+      <img id="wheel" class="placeholder" src="Img/arrow-sheet0.png">
+    </div>
+    <div class="wheel2 column">
+      <!-- put the text you want in the h3 -->
+      <h3 id="wTitle" class="wTitle">SPIN THE WHEEL</h3>
+      <p id="wText" class="wText"></p>
+    </div>
+  </div>
+
+
+  <script language="javascript">
+    /*h3 titles */
+    let developmentTitle = "DEVELOPMENT TRUST";
+    let benefitTitle = "BENEFIT TRUST";
+    let competenceTitle = "COMPETENCE TRUST";
+    let stabilityTitle = "STABILITY TRUST";
+    let relatinshipTitle = "RELATIONSHIP TRUST";
+    let visionTitle = "VISION TRUST";
+
+    /*p text (approximately 50 words) */
+    let developmentText = "Your text for development trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+    let benefitText = "Your text for benefit trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+    let competenceText = "Your text for competence trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+    let stabilityText = "Your text for stability trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+    let relatinshipText = "Your text for relatinship trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+    let visionText = "Your text for vision trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+
+    var angle = 0;
+    var blocked = false;
+
+    var wheel = document.querySelector('#wheel');
+    wheel.addEventListener('click', () => {
+      if (blocked) return;
+
+      var deg = 720 + Math.round(Math.random() * 2000);
+      angle += deg;
+      console.log(angle);
+      //create function calculate quotient and modulus
+      function calculateModulusQuotient(dividend, divider) {
+        return (dividend % divider);
+      }
+      var mQ = calculateModulusQuotient(angle, -360);
+      console.log(mQ);
+
+      setTimeout(function () {
+        blocked = false;
+        if (0 <= mQ && mQ <= 210) {
+          if (0 <= mQ && mQ <= 30) {
+            document.getElementById("wTitle").innerHTML = developmentTitle;
+            document.getElementById("wText").innerHTML = developmentText;
+          } else if (30 < mQ && mQ <= 90) {
+            document.getElementById("wTitle").innerHTML = benefitTitle;
+            document.getElementById("wText").innerHTML = benefitText;
+          } else if (90 < mQ && mQ <= 150) {
+            document.getElementById("wTitle").innerHTML = competenceTitle;
+            document.getElementById("wText").innerHTML = competenceText;
+          } else {
+            document.getElementById("wTitle").innerHTML = stabilityTitle;
+            document.getElementById("wText").innerHTML = stabilityText;
+          }
+        } else {
+          if (210 < mQ && mQ <= 270) {
+            document.getElementById("wTitle").innerHTML = relatinshipTitle;
+            document.getElementById("wText").innerHTML = relatinshipText;
+          } else if (270 < mQ && mQ <= 330) {
+            document.getElementById("wTitle").innerHTML = visionTitle;
+            document.getElementById("wText").innerHTML = visionText;
+          } else {
+            document.getElementById("wTitle").innerHTML = developmentTitle;
+            document.getElementById("wText").innerHTML = developmentText;
+          }
+        }
+      }, 2100);
+
+
+      wheel.style.transform = "rotate(" + angle + "deg)";
+      blocked = true;
+      setTimeout(function () {
+        blocked = false;
+      }, 2100);
+    }, false);
+
+    function changeImage() {
+
+      if (document.getElementById("imgClickAndChange").src == "Img/Human_Full.png") {
+        document.getElementById("imgClickAndChange").src = "Img/Human_Empty.png";
+      }
+      else {
+        document.getElementById("imgClickAndChange").src = "Img/Human_Empty.png";
+      }
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
