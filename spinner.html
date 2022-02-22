@@ -19,7 +19,14 @@
     <div class="wheel2 column">
       <!-- put the text you want in the h3 -->
       <h3 id="wTitle" class="wTitle">SPIN THE WHEEL</h3>
-      <p id="wText" class="wText"></p>
+      <p id="wText0" class="wText"></p>
+      <p id="wText1" class="wText T2"></p>
+      <p id="wText2" class="wText T2"></p>
+      <p id="wText3" class="wText"></p>
+      <p id="wText4" class="wText T2"></p>
+      <p id="wText5" class="wText T2"></p>
+      <p id="wText6" class="wText T2"></p>
+      <p id="wText7" class="wText T2"></p>
     </div>
   </div>
 
@@ -34,12 +41,12 @@
     let visionTitle = "VISION TRUST";
 
     /*p text (approximately 50 words) */
-    let developmentText = "Your text for development trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
-    let benefitText = "Your text for benefit trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
-    let competenceText = "Your text for competence trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
-    let stabilityText = "Your text for stability trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
-    let relatinshipText = "Your text for relatinship trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
-    let visionText = "Your text for vision trust || Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cum animi fugiat illum distinctio nam facilis sapiente exercitationem eius magnam. Minus mollitia ipsam voluptatum molestias nihil culpa placeat minima animi nesciunt obcaecati necessitatibus earum a cum sunt, enim, maxime flour!";
+    let developmentText = ["Why can I trust you to be successful and relevant in the future?", "Prompter:", "How will you progress?", "What will you achieve?", "Example:", "Plans.", "Goals.", "Investments."];
+    let benefitText = ["What benefits can I trust you for?", "Prompter:", "What's in it for me?", "Example:", "Pride", "Fun.", "Value for money.", "Savings."];
+    let competenceText = ["What competencies can I trust you to have?", "Prompter:", "Do you have what it takes?", "Example:", "Tech", "Expertise", "Creativity", "Listening skills"];
+    let stabilityText = ["Why can I trust you to have built a strong foundation?", "Prompter:", "Where do you come from?", "What have you achieved?", "Example:", "Tenure.", "Key successes.", "Size."];
+    let relatinshipText = ["What kind of relationship qualities can I trust you for?", "Prompter:", "What is it like to work with you?", "", "Example:", "Surprising.", "Caring.", "Proactive."];
+    let visionText = ["What appealing vision, mission or values can I trust you for?", "Prompter:", "What do you strive for?", "Why do you exist?", "Example:", "A just world", "Access for everyone (e.g. pro bono work)", ""];
 
     var angle = 0;
     var blocked = false;
@@ -63,27 +70,82 @@
         if (0 <= mQ && mQ <= 210) {
           if (0 <= mQ && mQ <= 30) {
             document.getElementById("wTitle").innerHTML = developmentTitle;
-            document.getElementById("wText").innerHTML = developmentText;
+            document.getElementById("wText0").innerHTML = developmentText[0];
+            document.getElementById("wText1").innerHTML = developmentText[1];
+            document.getElementById("wText2").innerHTML = developmentText[2];
+            document.getElementById("wText3").innerHTML = developmentText[3];
+            document.getElementById("wText4").innerHTML = developmentText[4];
+            document.getElementById("wText5").innerHTML = developmentText[5];
+            document.getElementById("wText6").innerHTML = developmentText[6];
+            document.getElementById("wText7").innerHTML = developmentText[7];
           } else if (30 < mQ && mQ <= 90) {
+            document.getElementById("wText2").className = "wText";
+            document.getElementById("wText3").className = "wText T2";
             document.getElementById("wTitle").innerHTML = benefitTitle;
-            document.getElementById("wText").innerHTML = benefitText;
+            document.getElementById("wText0").innerHTML = benefitText[0];
+            document.getElementById("wText1").innerHTML = benefitText[1];
+            document.getElementById("wText2").innerHTML = benefitText[2];
+            document.getElementById("wText3").innerHTML = benefitText[3];
+            document.getElementById("wText4").innerHTML = benefitText[4];
+            document.getElementById("wText5").innerHTML = benefitText[5];
+            document.getElementById("wText6").innerHTML = benefitText[6];
+            document.getElementById("wText7").innerHTML = benefitText[7];
           } else if (90 < mQ && mQ <= 150) {
+            document.getElementById("wText2").className = "wText";
+            document.getElementById("wText3").className = "wText T2";
             document.getElementById("wTitle").innerHTML = competenceTitle;
-            document.getElementById("wText").innerHTML = competenceText;
+            document.getElementById("wText0").innerHTML = competenceText[0];
+            document.getElementById("wText1").innerHTML = competenceText[1];
+            document.getElementById("wText2").innerHTML = competenceText[2];
+            document.getElementById("wText3").innerHTML = competenceText[3];
+            document.getElementById("wText4").innerHTML = competenceText[4];
+            document.getElementById("wText5").innerHTML = competenceText[5];
+            document.getElementById("wText6").innerHTML = competenceText[6];
+            document.getElementById("wText7").innerHTML = competenceText[7];
           } else {
             document.getElementById("wTitle").innerHTML = stabilityTitle;
-            document.getElementById("wText").innerHTML = stabilityText;
+            document.getElementById("wText0").innerHTML = stabilityText[0];
+            document.getElementById("wText1").innerHTML = stabilityText[1];
+            document.getElementById("wText2").innerHTML = stabilityText[2];
+            document.getElementById("wText3").innerHTML = stabilityText[3];
+            document.getElementById("wText4").innerHTML = stabilityText[4];
+            document.getElementById("wText5").innerHTML = stabilityText[5];
+            document.getElementById("wText6").innerHTML = stabilityText[6];
+            document.getElementById("wText7").innerHTML = stabilityText[7];
           }
         } else {
           if (210 < mQ && mQ <= 270) {
             document.getElementById("wTitle").innerHTML = relatinshipTitle;
-            document.getElementById("wText").innerHTML = relatinshipText;
+            document.getElementById("wText0").innerHTML = relatinshipText[0];
+            document.getElementById("wText1").innerHTML = relatinshipText[1];
+            document.getElementById("wText2").innerHTML = relatinshipText[2];
+            document.getElementById("wText3").innerHTML = relatinshipText[3];
+            document.getElementById("wText4").innerHTML = relatinshipText[4];
+            document.getElementById("wText5").innerHTML = relatinshipText[5];
+            document.getElementById("wText6").innerHTML = relatinshipText[6];
+            document.getElementById("wText7").innerHTML = relatinshipText[7];
           } else if (270 < mQ && mQ <= 330) {
+            document.getElementById("wText2").className = "wText T2";
+            document.getElementById("wText3").className = "wText";
             document.getElementById("wTitle").innerHTML = visionTitle;
-            document.getElementById("wText").innerHTML = visionText;
+            document.getElementById("wText0").innerHTML = visionText[0];
+            document.getElementById("wText1").innerHTML = visionText[1];
+            document.getElementById("wText2").innerHTML = visionText[2];
+            document.getElementById("wText3").innerHTML = visionText[3];
+            document.getElementById("wText4").innerHTML = visionText[4];
+            document.getElementById("wText5").innerHTML = visionText[5];
+            document.getElementById("wText6").innerHTML = visionText[6];
+            document.getElementById("wText7").innerHTML = visionText[7];
           } else {
             document.getElementById("wTitle").innerHTML = developmentTitle;
-            document.getElementById("wText").innerHTML = developmentText;
+            document.getElementById("wText0").innerHTML = developmentText[0];
+            document.getElementById("wText1").innerHTML = developmentText[1];
+            document.getElementById("wText2").innerHTML = developmentText[2];
+            document.getElementById("wText3").innerHTML = developmentText[3];
+            document.getElementById("wText4").innerHTML = developmentText[4];
+            document.getElementById("wText5").innerHTML = developmentText[5];
+            document.getElementById("wText6").innerHTML = developmentText[6];
+            document.getElementById("wText7").innerHTML = developmentText[7];
           }
         }
       }, 2100);
